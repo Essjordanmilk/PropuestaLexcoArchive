@@ -1,0 +1,30 @@
+.text-central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: white;
+  color: #33cccc;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+  background-color: whitesmoke;
+  transform: scale(1.1);
+}
+
+mat-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,19 @@
+<div class="sidenav-header">
+  <img [width]="profilePic()" [height]="profilePic()" src="../../../../assets/usuario.png" alt="">
+  <div class="header-text" [class.hide-header-text]="sideNavCollapsed()">
+    <h3>
+      Asistente de gestion documental
+    </h3>
+    <p>Usuario generico</p>
+  </div>
+  <div class="dropdown-center mt-3 text-center" [class.hide-header-text]="sideNavCollapsed()">
+    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenuButton"
+      data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      Rol
+    </button>
+    <div class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item" href="#">Rol 1</a>
+      <a class="dropdown-item" href="#">Rol 2</a>
+      <a class="dropdown-item" href="#">Rol 3</a>
+    </div>
+  </div>

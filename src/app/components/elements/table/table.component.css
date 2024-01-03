@@ -1,0 +1,24 @@
+table {
+  width: 100%;
+}
+
+mat-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 30%;
+  border: none;
+  background-color: #34cccc;
+  font-size: 18px;
+}
+
+.button:hover {
+  background-color: #269999;
+  transform: scale(1.1);
+}
