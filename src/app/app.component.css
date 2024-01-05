@@ -3,12 +3,16 @@ mat-toolbar {
   z-index: 5;
 }
 
+.full-width-container {
+  width: 100%;
+}
+
 .content {
   padding: 24px;
 }
 
 mat-sidenav-container {
-  height: calc(100vh - 64px);
+  height: 100%;
 }
 
 .link_name {

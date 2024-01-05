@@ -1,20 +1,21 @@
-<mat-card>
-  <div class="d-flex justify-content-between align-items-center">
+<mat-card class="example-card">
+  <div class="d-flex justify-content-between ">
     <div class="d-flex">
       <img width="80px" height="80px" src="../../../../assets/edificio.gif" alt="">
-      <div class="ml-3 text-central">
-        <mat-card-title>Sedes</mat-card-title>
-      </div>
+      <mat-card-title-group class="ml-3 text-central">
+        <mat-card-title>Administrador General</mat-card-title>
+        <mat-card-subtitle>Sedes</mat-card-subtitle>
+      </mat-card-title-group>
     </div>
 
-    <div class="d-flex mt-3 ">
+    <div class="d-flex justify-content-end mt-3 ">
       <div class="mr-2 pe-3">
-        <button type="button" class="button" mdbRipple title="Cargar Archivo Plano">
+        <button type="button" class="button" mdbRipple data-title="Cargar Archivo Plano">
           <i class="fi fi-rr-folder-upload"></i>
         </button>
       </div>
       <div class="pe-3">
-        <button type="button" class="button" mdbRipple title="Descargar Datos">
+        <button type="button" class="button" mdbRipple data-title="Descargar Datos">
           <i class="fi fi-rr-download"></i>
         </button>
       </div>

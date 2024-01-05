@@ -68,11 +68,24 @@ export class TableComponent {
   }
 
   //tabla
-  displayedColumns: string[] = ['Nombre', 'Prefijo', 'Ciudad', 'Direccion', 'Telefono', 'Estado', 'Acciones'];
+  displayedColumns: string[] = ['Nombre', 'Prefijo', 'Ciudad', 'Direccion', 'Telefono', 'Estado'];
   dataSource = ELEMENT_DATA;
 
   //inputs
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
 
   matcher = new MyErrorStateMatcher();
+
+  drawerOpened = false;
+
+
+  openDrawer() {
+    this.drawerOpened = true;
+  }
+
+  closeDrawer() {
+    this.drawerOpened = false;
+  }
+  fontStyleControl = new FormControl('');
+  fontStyle?: string;
 }

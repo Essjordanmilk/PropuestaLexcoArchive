@@ -1,6 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
+
+[data-title]:hover:after {
+  opacity: 1;
+  transition: all 0.2s ease-in 0.2s;
+  visibility: visible;
+}
+
+[data-title]:after {
+  content: attr(data-title);
+  background-color: #fff;
+  color: #111111;
+  font-size: 14px;
+  position: absolute;
+  padding: 3px 10px;
+  bottom: -1.6em;
+  left: 50%;
+  /* Cambia a 50% para centrar horizontalmente */
+  transform: translateX(-50%) translateY(30%);
+  /* Añade esta línea para centrar el elemento */
+  white-space: nowrap;
+  box-shadow: 1px 1px 2px #222222;
+  opacity: 0;
+  border: 1px solid #fff;
+  z-index: 99999;
+  visibility: hidden;
+  border-radius: 6px;
+}

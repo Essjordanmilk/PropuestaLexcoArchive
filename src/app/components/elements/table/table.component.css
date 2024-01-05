@@ -22,3 +22,75 @@ mat-card {
   background-color: #269999;
   transform: scale(1.1);
 }
+
+.mat-mdc-row .mat-mdc-cell {
+  cursor: pointer;
+}
+
+.mat-mdc-row:hover .mat-mdc-cell {
+  background-color: #E0E0E0;
+}
+
+/* estilos context menu */
+
+.title-item {
+  background-color: transparent;
+  border: none;
+  min-width: 64px;
+  line-height: 8px;
+  margin: 0;
+  /* Resetear el margen */
+  padding-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.context-menu {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 180px;
+  max-width: 280px;
+  background-color: rgb(255, 255, 255);
+  padding: 6px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 6%;
+}
+
+.context-menu-item {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  user-select: none;
+  min-width: 64px;
+  line-height: 36px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+}
+
+.context-menu-item:hover {
+  background-color: rgb(208, 208, 208);
+}
+
+.context-menu-item:active {
+  background-color: rgb(170, 170, 170);
+}
+
+.example-container {
+  display: flex;
+  height: 100vh;
+}
+
+.example-drawer {
+  width: 400px;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}

@@ -25,6 +25,8 @@ import { MatTableModule } from '@angular/material/table';
 import { PaginatorModule } from 'primeng/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { AddModalComponent } from './components/elements/add-modal/add-modal.component';
+import { CdkMenuModule } from '@angular/cdk/menu';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { AddModalComponent } from './components/elements/add-modal/add-modal.com
     MatCardModule,
     MatTableModule,
     PaginatorModule,
-    MatSelectModule
+    MatSelectModule,
+    CdkMenuModule,
+    MatButtonToggleModule
 
   ],
   providers: [],
