@@ -1,5 +1,5 @@
-import { Component, EventEmitter } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
+import { Component } from '@angular/core';
+
 import {
   FormControl,
   FormGroupDirective,
@@ -57,10 +57,13 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
+
   //filter
   first: number = 0;
 
   rows: number = 10;
+
+  value: string | undefined;
 
   onPageChange(event: PageEvent | any) {
     this.first = event.first;
@@ -88,4 +91,22 @@ export class TableComponent {
   }
   fontStyleControl = new FormControl('');
   fontStyle?: string;
+
+
+  //visualizacion del boton 
+  hoveredRowIndex: number | null = null;
+
+  onMouseEnter(index: number): void {
+    this.hoveredRowIndex = index;
+  }
+
+  onMouseLeave(): void {
+    this.hoveredRowIndex = null;
+  }
+
+  isButtonVisible(index: number): boolean {
+    return this.hoveredRowIndex === index;
+  }
+
+
 }

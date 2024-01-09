@@ -16,16 +16,20 @@ mat-sidenav-container {
 }
 
 .link_name {
+  padding: 0;
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: clip;
   max-width: 100%;
   font-size: smaller;
+  text-align: center;
 }
+
 
 .text-central {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+

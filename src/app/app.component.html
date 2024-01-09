@@ -1,42 +1,42 @@
-<mat-sidenav-container class="full-width-container">
+<mat-sidenav-container class="full-width-container text-nowrap">
   <mat-sidenav (mouseenter)="collapsed.set(false)" (mouseleave)="collapsed.set(true)" opened mode="side"
     [style.width]="sidenavWidth()" [@fadeInOut]="collapsed()">
-    <app-custom-sidenav [collapsed]="collapsed()" class="px-2"></app-custom-sidenav>
+    <app-custom-sidenav [collapsed]="collapsed()" class="px-0 pb-0"></app-custom-sidenav>
     <mat-nav-list>
       <a mat-list-item routerLink="#">
-        <i class="fi fi-rs-building pe-3"></i>
+        <i matListItemIcon class="fi fi-rs-building pe-3" [ngStyle]="{ 'color': 'black', 'font-size': '18px' }"></i>
         <span class="link_name">Sedes</span>
       </a>
-      <a mat-list-item routerLink="#">
-        <i class="fi fi-rr-id-badge pe-3"></i>
+      <a mat-list-item routerLink="#" >
+        <i matListItemIcon class="fi fi-rr-id-badge pe-3" [ngStyle]="{ 'color': 'black', 'font-size': '18px' }"></i>
         <span class="link_name">Cargos</span>
       </a>
       <a mat-list-item routerLink="#">
-        <i class="fi fi-rs-chair-office pe-3"></i>
+        <i matListItemIcon class="fi fi-rs-chair-office pe-3" [ngStyle]="{ 'color': 'black', 'font-size': '18px' }"></i>
         <span class="link_name">Dependencias</span>
       </a>
       <a mat-list-item routerLink="#">
-        <i class="fi fi-rr-users pe-3"></i>
+        <i matListItemIcon class="fi fi-rr-users pe-3" [ngStyle]="{ 'color': 'black', 'font-size': '18px' }"></i>
         <span class="link_name">Usuarios</span>
       </a>
       <a mat-list-item routerLink="#">
-        <i class="fi fi-rr-users-alt pe-3"></i>
+        <i matListItemIcon class="fi fi-rr-users-alt pe-3" [ngStyle]="{ 'color': 'black', 'font-size': '18px' }"></i>
         <span class="link_name">Grupos</span>
       </a>
       <a mat-list-item routerLink="#">
-        <i class="fi fi-rr-bell-ring pe-3"></i>
+        <i matListItemIcon class="fi fi-rr-bell-ring pe-3" [ngStyle]="{ 'color': 'black', 'font-size': '18px' }"></i>
         <span class="link_name">Notificaciones</span>
       </a>
       <a mat-list-item routerLink="#">
-        <i class="fi fi-rs-pencil-paintbrush pe-3"></i>
+        <i matListItemIcon class="fi fi-rs-pencil-paintbrush pe-3" [ngStyle]="{ 'color': 'black', 'font-size': '18px' }"></i>
         <span class="link_name">Diseño</span>
       </a>
       <a mat-list-item routerLink="#">
-        <i class="fi fi-rs-search-alt pe-3"></i>
+        <i matListItemIcon class="fi fi-rs-search-alt pe-3" [ngStyle]="{ 'color': 'black', 'font-size': '18px' }"></i>
         <span class="link_name">Auditorias</span>
       </a>
       <a mat-list-item routerLink="#">
-        <i class="fi fi-rr-exit pe-3"></i>
+        <i matListItemIcon class="fi fi-rr-exit pe-3" [ngStyle]="{ 'color': 'black', 'font-size': '18px' }"></i>
         <span class="link_name">Cerrar sesión</span>
       </a>
     </mat-nav-list>

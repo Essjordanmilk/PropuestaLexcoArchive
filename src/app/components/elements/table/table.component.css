@@ -94,3 +94,22 @@ mat-card {
   top: 10px;
   right: 10px;
 }
+
+/* estilos de la visualizacion del boton  */
+.row-hovered .button-side {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.button-side {
+  visibility: hidden;
+  opacity: 0;
+  color: gray;
+  transition: opacity 0.3s ease;
+}
+
+.button-side.active {
+  visibility: visible;
+  opacity: 1;
+}
+

@@ -12,5 +12,5 @@ export class CustomSidenavComponent {
     this.sideNavCollapsed.set(val);
   }
 
-  profilePic = computed(() => this.sideNavCollapsed() ? '32' : '60');
+  profilePic = computed(() => this.sideNavCollapsed() ? '30' : '60');
 }

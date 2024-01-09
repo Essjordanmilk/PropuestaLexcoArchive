@@ -3,7 +3,7 @@
     <div class="row align-items-center">
       <!-- Filtros -->
       <div class="col-3">
-        <mat-form-field class="w-100">
+        <mat-form-field class="w-100" appearance="outline">
           <mat-label class="fs-8">Nombre</mat-label>
           <input type="text" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
             placeholder="Nombre" class="fs-8">
@@ -18,7 +18,7 @@
       </div>
 
       <div class="col-3">
-        <mat-form-field class="w-100">
+        <mat-form-field class="w-100" appearance="outline">
           <mat-label class="fs-8">Prefijo</mat-label>
           <input type="text" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
             placeholder="Prefijo" class="fs-8">
@@ -33,7 +33,7 @@
       </div>
 
       <div class="col-2 pe-2">
-        <mat-form-field class="w-100">
+        <mat-form-field class="w-100" appearance="outline">
           <mat-label class="fs-8">Estado</mat-label>
           <mat-select class="fs-8">
             <mat-option value="one">Estado 1</mat-option>
@@ -44,7 +44,7 @@
       </div>
 
       <div class="col-2">
-        <mat-form-field class="w-100">
+        <mat-form-field class="w-100" appearance="outline">
           <mat-label class="fs-8">Ciudad</mat-label>
           <mat-select class="fs-8">
             <mat-option value="one">Ciudad 1</mat-option>
@@ -67,10 +67,10 @@
 
       <ng-container matColumnDef="Nombre">
         <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let element">
+        <td mat-cell *matCellDef="let element; let i = index" (mouseenter)="onMouseEnter(i)" (mouseleave)="onMouseLeave()">
           <div class="d-flex align-items-center">
             <span class="flex-grow-1 text-capitalize">{{element.Nombre}}</span>
-            <button mat-icon-button (click)="openDrawer()">
+            <button mat-icon-button (click)="openDrawer()" title="Acciones" class="button-side" [class.active]="isButtonVisible(i)">
               <i class="fi fi-rr-circle-ellipsis"></i>
             </button>
           </div>
