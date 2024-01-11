@@ -4,12 +4,10 @@ import {
   FormControl,
   FormGroupDirective,
   NgForm,
-  Validators,
-  FormsModule,
-  ReactiveFormsModule,
+  Validators
 } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { SharedService } from 'src/app/services/shared.service';
 export interface PeriodicElement {
   Nombre: string,
   Prefijo: string,
@@ -57,6 +55,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
+  constructor(private sharedOption: SharedService) {
+    this.sharedOption.getOption().subscribe(option => {
+      this.openMenu(option);
+    });
+  }
 
   //filter
   first: number = 0;
@@ -93,7 +96,7 @@ export class TableComponent {
   fontStyle?: string;
 
 
-  //visualizacion del boton 
+  //visualizacion del boton
   hoveredRowIndex: number | null = null;
 
   onMouseEnter(index: number): void {
@@ -106,6 +109,18 @@ export class TableComponent {
 
   isButtonVisible(index: number): boolean {
     return this.hoveredRowIndex === index;
+  }
+
+  openMenu(option: string): void {
+    this.fontStyleControl.setValue(option);
+
+    if (option === 'Editar' || option === 'Crear' || option === '3') {
+      this.fontStyleControl.enable();
+      this.openDrawer();
+    } else {
+      this.fontStyleControl.disable();
+      this.closeDrawer();
+    }
   }
 
 

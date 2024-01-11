@@ -27,6 +27,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { AddModalComponent } from './components/elements/add-modal/add-modal.component';
 import { CdkMenuModule } from '@angular/cdk/menu';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { EditarComponent } from './components/forms/editar/editar.component';
+import { CrearComponent } from './components/forms/crear/crear.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     TableComponent,
     ItemComponent,
     CustomSidenavComponent,
-    AddModalComponent
+    AddModalComponent,
+    EditarComponent,
+    CrearComponent
   ],
   imports: [
     BrowserModule,

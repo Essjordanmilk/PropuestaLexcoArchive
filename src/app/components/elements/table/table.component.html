@@ -67,10 +67,12 @@
 
       <ng-container matColumnDef="Nombre">
         <th mat-header-cell *matHeaderCellDef> Nombre </th>
-        <td mat-cell *matCellDef="let element; let i = index" (mouseenter)="onMouseEnter(i)" (mouseleave)="onMouseLeave()">
+        <td mat-cell *matCellDef="let element; let i = index" (mouseenter)="onMouseEnter(i)"
+          (mouseleave)="onMouseLeave()">
           <div class="d-flex align-items-center">
             <span class="flex-grow-1 text-capitalize">{{element.Nombre}}</span>
-            <button mat-icon-button (click)="openDrawer()" title="Acciones" class="button-side" [class.active]="isButtonVisible(i)">
+            <button mat-icon-button (click)="openDrawer()" title="Acciones" class="button-side"
+              [class.active]="isButtonVisible(i)">
               <i class="fi fi-rr-circle-ellipsis"></i>
             </button>
           </div>
@@ -119,9 +121,9 @@
   <div class="context-menu" cdkMenu>
     <p class="title-item ">Acciones</p>
     <hr />
-    <button class="context-menu-item" cdkMenuItem>Opción 1</button>
-    <button class="context-menu-item" cdkMenuItem>Opción 2</button>
-    <button class="context-menu-item" cdkMenuItem>Opción 3</button>
+    <button class="context-menu-item" (click)="openMenu('Editar')" cdkMenuItem>Editar</button>
+    <button class="context-menu-item" (click)="openMenu('Crear')" cdkMenuItem>Crear</button>
+    <button class="context-menu-item" (click)="openMenu('3')" cdkMenuItem>Opción 3</button>
   </div>
 </ng-template>
 
@@ -137,12 +139,24 @@
     <h4 class="d-flex justify-content-center">Selecciona alguna de las opciones disponibles</h4>
     <div class="d-flex justify-content-center">
       <mat-button-toggle-group [formControl]="fontStyleControl" aria-label="Font Style">
-        <mat-button-toggle value="1">Opción 1</mat-button-toggle>
-        <mat-button-toggle value="2">Opción 2</mat-button-toggle>
+        <mat-button-toggle value="Editar">Editar</mat-button-toggle>
+        <mat-button-toggle value="Crear">Crear</mat-button-toggle>
         <mat-button-toggle value="3">Opción 3</mat-button-toggle>
       </mat-button-toggle-group>
     </div>
-    <p class="d-flex justify-content-center pt-4" style="font-weight: 500;">Se encuentra en la opción
-      {{fontStyleControl.value}}</p>
+
   </section>
+
+  <ng-container *ngIf="fontStyleControl.value === 'Editar'; else crearOption">
+    <app-editar class="pt-4"></app-editar>
+  </ng-container>
+  <ng-template #crearOption>
+    <ng-container *ngIf="fontStyleControl.value === 'Crear'; else opcion3Option">
+      <app-crear class="pt-4"></app-crear>
+    </ng-container>
+    <ng-template #opcion3Option>
+      <p class="d-flex justify-content-center pt-4" style="font-weight: 500;">Se encuentra en la opción {{
+        fontStyleControl.value }}</p>
+    </ng-template>
+  </ng-template>
 </mat-drawer>

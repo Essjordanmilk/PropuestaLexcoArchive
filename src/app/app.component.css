@@ -33,3 +33,6 @@ mat-sidenav-container {
   align-items: center;
 }
 
+mat-nav-list app-custom-sidenav {
+  overflow-x: hidden;
+}

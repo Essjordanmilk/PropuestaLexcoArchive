@@ -86,7 +86,7 @@ mat-card {
 }
 
 .example-drawer {
-  width: 400px;
+  width: 500px;
 }
 
 .close-button {
@@ -112,4 +112,3 @@ mat-card {
   visibility: visible;
   opacity: 1;
 }
-
