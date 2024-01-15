@@ -121,9 +121,23 @@
   <div class="context-menu" cdkMenu>
     <p class="title-item ">Acciones</p>
     <hr />
-    <button class="context-menu-item" (click)="openMenu('Editar')" cdkMenuItem>Editar</button>
-    <button class="context-menu-item" (click)="openMenu('Crear')" cdkMenuItem>Crear</button>
-    <button class="context-menu-item" (click)="openMenu('3')" cdkMenuItem>Opción 3</button>
+    <div class="container">
+      <div class="row">
+        <button class="context-menu-item col-10" (click)="openMenu('Editar')" cdkMenuItem><i
+            class="fi fi-rr-pencil col-2 d-flex align-content-center text-center"></i>Editar</button>
+      </div>
+      <div class="row">
+        <button class="context-menu-item col-10" (click)="openMenu('Crear')" cdkMenuItem><i
+            class="fi fi-br-plus col-2 d-flex align-content-center text-center"></i>Crear</button>
+      </div>
+      <div class="row">
+        <button class="context-menu-item col-10" (click)="openMenu('3')" cdkMenuItem><i
+            class="fi fi-rs-settings col-2 d-flex align-content-center text-center"></i>Opción
+          3</button>
+      </div>
+    </div>
+
+
   </div>
 </ng-template>
 
