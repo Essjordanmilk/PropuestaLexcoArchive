@@ -6,13 +6,9 @@ import { Subject } from 'rxjs';
 })
 export class SharedService {
   private optionGeneral = new Subject<string>();
+  option$ = this.optionGeneral.asObservable();
 
   setOption(option: string) {
     this.optionGeneral.next(option);
   }
-
-  getOption() {
-    return this.optionGeneral.asObservable();
-  }
 }
-
