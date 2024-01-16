@@ -33,6 +33,8 @@ mat-sidenav-container {
   align-items: center;
 }
 
-mat-nav-list app-custom-sidenav {
-  overflow-x: hidden;
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }

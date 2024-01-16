@@ -89,12 +89,6 @@ mat-card {
   width: 500px;
 }
 
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
 /* estilos de la visualizacion del boton  */
 .row-hovered .button-side {
   pointer-events: auto;
@@ -111,4 +105,9 @@ mat-card {
 .button-side.active {
   visibility: visible;
   opacity: 1;
+}
+
+.second-drawer-opened .mat-drawer-backdrop {
+  filter: blur(8px);  /* Ajusta el valor según tus preferencias */
+  background-color: rgba(0, 0, 0, 0.5);  /* Ajusta el color y la opacidad del fondo */
 }

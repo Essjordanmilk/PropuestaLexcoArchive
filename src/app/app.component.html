@@ -41,7 +41,41 @@
       </a>
     </mat-nav-list>
   </mat-sidenav>
+  <!-- Segundo menu  -->
+<mat-sidenav #drawer class="example-drawer" mode="over" [opened]="drawerOpened" hasBackdrop="true" position="end"
+[ngClass]="{ 'second-drawer-opened': drawerOpened }">
+  <button mat-icon-button (click)="closeDrawer()" class="close-button">
+    <mat-icon>close</mat-icon>
+  </button>
+  <h1 class="d-flex justify-content-center pt-4">Opciones</h1>
+  <section>
+    <h4 class="d-flex justify-content-center">Selecciona alguna de las opciones disponibles</h4>
+    <div class="d-flex justify-content-center">
+      <mat-button-toggle-group [formControl]="fontStyleControl" aria-label="Font Style">
+        <mat-button-toggle value="Editar">Editar</mat-button-toggle>
+        <mat-button-toggle value="Crear">Crear</mat-button-toggle>
+        <mat-button-toggle value="3">Opción 3</mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+  </section>
+
+  <ng-container *ngIf="fontStyleControl.value === 'Editar'; else crearOption">
+    <app-editar class="pt-4"></app-editar>
+  </ng-container>
+  <ng-template #crearOption>
+    <ng-container *ngIf="fontStyleControl.value === 'Crear'; else opcion3Option">
+      <app-crear class="pt-4"></app-crear>
+    </ng-container>
+    <ng-template #opcion3Option>
+      <p class="d-flex justify-content-center pt-4" style="font-weight: 500;">Se encuentra en la opción {{
+        fontStyleControl.value }}</p>
+    </ng-template>
+  </ng-template>
+</mat-sidenav>
   <mat-sidenav-content class="content" [style.margin-left]="sidenavWidth()">
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+

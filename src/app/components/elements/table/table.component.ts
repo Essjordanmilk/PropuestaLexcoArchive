@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { SharedService } from 'src/app/services/shared.service';
+
 export interface PeriodicElement {
   Nombre: string,
   Prefijo: string,
@@ -55,11 +56,11 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-  constructor(private sharedOption: SharedService) {
-    this.sharedOption.getOption().subscribe(option => {
-      this.openMenu(option);
-    });
+  constructor( private Data: SharedService) {
+
+
   }
+
 
   //filter
   first: number = 0;
@@ -82,18 +83,11 @@ export class TableComponent {
 
   matcher = new MyErrorStateMatcher();
 
-  drawerOpened = false;
 
 
-  openDrawer() {
-    this.drawerOpened = true;
-  }
 
-  closeDrawer() {
-    this.drawerOpened = false;
-  }
-  fontStyleControl = new FormControl('');
-  fontStyle?: string;
+
+
 
 
   //visualizacion del boton
@@ -111,17 +105,9 @@ export class TableComponent {
     return this.hoveredRowIndex === index;
   }
 
-  openMenu(option: string): void {
-    this.fontStyleControl.setValue(option);
 
-    if (option === 'Editar' || option === 'Crear' || option === '3') {
-      this.fontStyleControl.enable();
-      this.openDrawer();
-    } else {
-      this.fontStyleControl.disable();
-      this.closeDrawer();
-    }
+
+  sendOption(option: string) {
+    this.Data.setOption(option);
   }
-
-
 }

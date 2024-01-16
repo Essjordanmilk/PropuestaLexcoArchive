@@ -1,6 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { state, style, transition, trigger, animate } from "@angular/animations";
-
+import { SharedService } from 'src/app/services/shared.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,35 @@ export class AppComponent {
   title = 'sevenet-archivo';
   collapsed = signal(true);
 
+  fontStyleControl = new FormControl('');
+  fontStyle?: string;
+  drawerOpened = false;
+
   sidenavWidth = computed(() => this.collapsed() ? '80px' : '250px');
+  constructor( private sharedOption: SharedService) {
+    this.sharedOption.option$.subscribe(option => {
+      this.openMenu(option);
+    });
+  }
 
 
+  openMenu(option: string): void {
+    this.fontStyleControl.setValue(option);
+
+    if (option === 'Editar' || option === 'Crear' || option === '3') {
+      this.fontStyleControl.enable();
+      this.openDrawer2();
+    } else {
+      this.fontStyleControl.disable();
+      this.closeDrawer();
+    }
+  }
+
+  openDrawer2() {
+    this.drawerOpened = true;
+  }
+
+  closeDrawer() {
+    this.drawerOpened = false;
+  }
 }
